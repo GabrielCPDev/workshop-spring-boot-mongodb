@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.TimeZone;
 
+import org.apache.catalina.startup.UserConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -44,6 +45,8 @@ public class Instantiation implements CommandLineRunner {
 
 		
 		postReposiroty.saveAll(Arrays.asList(post1, post2));
-	}
+		
+		maria.getPosts().addAll(Arrays.asList(post1, post2));
+		userReposiroty.save(maria);
 
-}
+}}
